@@ -1,66 +1,70 @@
 3-1
 1, 
 SELECT * FROM 気象観測
-WHERE 月 = ‘6’
+WHERE 月 = 6
 
 2,
 SELECT * FROM 気象観測
-WHERE NOT 月 = ‘6’
+WHERE 月 <> 6
 
 3,
 SELECT * FROM 気象観測
-WHERE 降水量 < ‘100’
+WHERE 降水量 < 100
 
 4,
 SELECT * FROM 気象観測
-WHERE 降水量 > ‘200’
+WHERE 降水量 > 200
 
 5, 
 SELECT * FROM 気象観測
-WHERE 最高気温 >= ‘30’
+WHERE 最高気温 >= 30
 
 6,
 SELECT * FROM 気象観測
-WHERE 最低気温 <= ‘0’
+WHERE 最低気温 <= 0
 
 7,
 SELECT * FROM 気象観測
-WHERE 月 IN (‘3’, ‘5’, ‘7’)
+WHERE 月 IN (3, 5, 7)
 
 SELECT * FROM 気象観測
-WHERE 月 = (‘3’, ‘5’, ‘7’)
+WHERE 月 = 3 OR 月 = 5 OR 月 = 7
 
 8,
 SELECT * FROM 気象観測
-WHERE 月 NOT IN (‘3’, ‘5’, ‘7’)
+WHERE 月 NOT IN (3, 5, 7)
+
+SELECT * FROM 気象観測
+WHERE 月 <> 3 AND 月 <> 5 月 <> 7
 
 9,
 SELECT * FROM 気象観測
-WHERE 降水量 <= ‘100’ AND 湿度 < ’50’
+WHERE 降水量 <= 100 AND 湿度 < 50
 
 10,
 SELECT * FROM 気象観測
-WHERE 最低気温 < ‘5’ OR 最高気温 > 35
+WHERE 最低気温 < 5 OR 最高気温 > 35
 
 11,
 SELECT * FROM 気象観測
-WHERE 湿度 BETWEEN ’60’ AND ’79’
+WHERE 湿度 BETWEEN 60 AND 79
 
 12,
 SELECT * FROM 気象観測
-WHERE 月 BETWEEN ’60’ AND ’79’
+WHERE 降水量 IS NULL OR 最高気温 IS NULL
+	OR 最低気温 IS NULL OR 湿度 IS NULL
 
 3-2
 1,
-SELECT * FROM 都道府県
+SELECT 都道府県名 FROM 都道府県
 WHERE 都道府県名 LIKE '%川'
 
 2,
-SELECT * FROM 都道府県
+SELECT 都道府県名 FROM 都道府県
 WHERE 都道府県名 LIKE '%島%'
 
 3,
-SELECT * FROM 都道府県
+SELECT 都道府県名 FROM 都道府県
 WHERE 都道府県名 LIKE '愛%'
 
 4,
@@ -69,7 +73,7 @@ WHERE 都道府県名 = 県庁所在地
 
 5,
 SELECT * FROM 都道府県
-WHERE NOT 都道府県名 = 県庁所在地
+WHERE 都道府県名 <> 県庁所在地
 
 3-3,
 1,
@@ -78,6 +82,7 @@ SELECT * FROM 成績表
 2,
 INSERT INTO 成績表
 	VALUES ('S001', '織田信長', 77, 55, 80, 75, 93, NULL)
+INSERT INTO 成績表
 	VALUES ('A002', '豊臣秀吉', 64, 69, 70, 0, 59, NULL)
 
 3,
@@ -88,7 +93,7 @@ UPDATE 成績表
 4, 
 UPDATE 成績表
 	SET 外国語 = 93
-	WHERE 学籍番号 = 'A002' OR 学籍番号 = 'E003'
+	WHERE 学籍番号 IN ('A002', 'E003')
 
 5,
 (1)
@@ -107,6 +112,9 @@ UPDATE 成績表
 WHERE 法学 < 50 AND 経済学 < 50 AND 哲学 < 50 AND 情報理論 < 50 AND 外国語 < 50
 
 (4)
+UPDATE 成績表
+	SET 総合成績 = 'C'
+WHERE 総合成績 = NULL
 
 6,
 DELETE FROM 成績表
