@@ -112,6 +112,10 @@ WHERE 法学 < 50 AND 経済学 < 50 AND 哲学 < 50 AND 情報理論 < 50 AND �
 DELETE FROM 成績表
 WHERE 法学 = 0 OR 経済学 = 0 OR 哲学 = 0 OR 情報理論 = 0 OR 外国語 = 0
 
+3-4
+1, compound key
+2, artificial key
+3, natural key
 
 
 
