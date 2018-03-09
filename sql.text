@@ -153,6 +153,39 @@ WHERE 分類 = 3 AND 数量 >= 2
 ORDER BY 日付, 数量 DESC
 
 6,
+SELECT 分類, 商品名, サイズ, 単価 FROM 注文履歴
+WHERE 分類 = 1
+ORDER BY 商品名
+
+SELECT 分類, 商品名, 単価 FROM 注文履歴
+WHERE 分類 = 2
+ORDER BY 商品名
+
+SELECT 分類, 商品名, 単価 FROM 注文履歴
+WHERE 分類 = 3
+ORDER BY 商品名
+
+
+4-2
+1,
+SELECT 値 FROM 偶数
+UNION
+SELECT 値 FROM 奇数
+
+2,
+SELECT 値 FROM 整数
+EXCEPT
+SELECT 値 FROM 偶数
+
+3,
+SELECT 値 FROM 偶数
+INTERSECT
+SELECT 値 FROM 整数
+
+4,
+SELECT 値 FROM 偶数
+INTERSECT
+SELECT 値 FROM 奇数
 
 
 
