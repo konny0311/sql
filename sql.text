@@ -207,7 +207,16 @@ SELECT 受験者ID AS 合格者ID, 午前, 午後1, 午後2, 論述, 平均点
 WHERE 午前 <= 60 AND 午後1 + 午後2 >= 120 AND 論述 >= 平均点*4*0.3
 FROM 家計簿
 
+5-2 (hard)
+1,
+UPDATE 回答者
+SET 国名 = '日本'
+WHERE メールアドレス LIKE '%jp%'
 
+
+2,
+SELECT メールアドレス, RTRIM(メールアドレス) AS メールアドレス, 性別, 年齢 
+FROM 回答者
 
 
 
