@@ -369,12 +369,12 @@ E01: 3
 7-3,
 1,
 INSERT INTO 頭数集計
-SELECT 飼育県, COUNT(飼育県) AS 飼育頭数
+SELECT 飼育県, COUNT(個体識別番号) AS 飼育頭数
 FROM 個体識別
 GROUP BY 飼育県
 
 2,
-SELECT 飼育県, 個体識別番号, 
+SELECT 飼育県 AS 都道府県名, 個体識別番号, 
 CASE 雌雄コード
 WHEN '1' THEN '雄'
 WHEN '2' THEN '雌'
