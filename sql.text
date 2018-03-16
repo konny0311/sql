@@ -499,11 +499,11 @@ CREATE TABLE 学生 (
 1,学部テーブルに無いIDを学生.学部IDに追加する
 2,学部テーブルを削除してしまう
 
+10-5
+SELECT REPLACE(学部ID, 'R', 'K') FROM 学生
 
-
-
-
-
+DELETE FROM 学部
+WHERE ID = 'R'
 
 
 
