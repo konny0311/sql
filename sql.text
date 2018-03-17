@@ -519,6 +519,8 @@ E, ROLL FORWARD
 2, 
 CREATE VIEW 検索結果 AS
 SELECT 学籍番号, 名前, 生年月日, 学部ID, 血液型 FROM 学生
+JOIN 学部
+ON 学生.学部ID = 学部.ID
 3,
 INSERT INTO 学生
 VALUES ('B1101022', '小島 進', '1993-01-01', 'A', 'K', ISTD.NEXTVAL)
