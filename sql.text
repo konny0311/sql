@@ -507,6 +507,7 @@ DELETE FROM 学部
 WHERE ID = 'R';
 COMMIT;
 
+
 11-1
 A, ACID
 B, 制約
